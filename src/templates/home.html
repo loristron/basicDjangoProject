@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %} 
+	<h1 align="center"> Animow! </h1>
+	<p align="center"> Olá, {{request.user }}, Essa pagina veio de um template Django! </p>
+	<ul>
+		{% for subItem in my_list %}
+			{% if subItem == 'abc' %}
+				<li>{{forloop.counter}} - {{subItem|capfirst}} - Condicional do IF atingida!</li>
+			{% elif subItem == 456 %}
+				<li>{{forloop.counter}} - {{subItem}} + {{forloop.counter}} = {{subItem|add:forloop.counter}}</li>
+			{% else %}
+				<li>{{forloop.counter}} - {{subItem}}</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+{% endblock %}
+{% block footer %}
+<p> footer </p>
+{% endblock footer %}

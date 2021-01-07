@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3> TEMPLATE DENTRO DO APP </h3>
+<h3> Produtos: </h3>
+<p> {{object.title}} - {% if object.description %} {{object.description}} {% else %} Estamos trabalhando na descrição! {% endif %} - R${{object.price}} - {% if object.summary %} {{object.summary}} {% else %} Não temos sumario deste produto! {% endif %} </p>
+{% endblock %}
